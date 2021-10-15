@@ -84,8 +84,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.events.observe(this) {
             when (it) {
                 is WikiResult.Succes -> {
-                    binding.shimmerViewContainer.visibility = View.GONE
-                    binding.cardStackView.visibility = View.VISIBLE
+                    cancelShimmerEffect()
                     val dateDesc = " Today in history " + " '${it.data?.date}'"
                     binding.txtDateDesc.text = dateDesc
 
@@ -95,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                         currentEvent =events
                                 //events.filter { event -> event.description.isNotBlank() && event.description !== "null" }
                         mAdapter.setEvents(events)
-                        mAdapter.notifyDataSetChanged()
+
                     }
                 }
                 is WikiResult.Loading -> {
@@ -107,6 +106,13 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+    }
+
+    private fun cancelShimmerEffect() {
+        binding.shimmerViewContainer.visibility = View.GONE
+        binding.cardStackView.visibility = View.VISIBLE
+        binding.txtDateDescPlaceholder.visibility = View.GONE
+        binding.txtDateDesc.visibility = View.VISIBLE
     }
 
 

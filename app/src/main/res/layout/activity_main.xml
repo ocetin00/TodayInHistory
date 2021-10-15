@@ -10,13 +10,14 @@
             name="date_desc"
             type="String" />
     </data>
+
     <androidx.appcompat.widget.LinearLayoutCompat
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background_gradiant"
         android:orientation="vertical"
-        tools:context=".fragmentMain.FragmentMain"
-        android:background="@drawable/background_gradiant">
+        tools:context=".fragmentMain.FragmentMain">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -26,32 +27,33 @@
                 android:id="@+id/shimmer_view_container"
                 android:layout_width="match_parent"
                 android:layout_height="522dp"
-                android:layout_marginTop="30dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="20dp"
 
                 >
+
                 <FrameLayout
-                    android:orientation="vertical"
                     android:id="@+id/card_stack_view_placeholder"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_above="@+id/button_container"
                     android:background="@color/shimmer_placeholder"
-                    ></FrameLayout>
+                    android:orientation="vertical"></FrameLayout>
 
             </com.facebook.shimmer.ShimmerFrameLayout>
+
             <com.yuyakaido.android.cardstackview.CardStackView
                 android:id="@+id/card_stack_view"
                 android:layout_width="match_parent"
                 android:layout_height="522dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_above="@+id/button_container"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
                 android:clipToPadding="false"
-                android:visibility="gone"
-                android:padding="6dp"></com.yuyakaido.android.cardstackview.CardStackView>
+                android:padding="6dp"
+                android:visibility="gone"></com.yuyakaido.android.cardstackview.CardStackView>
         </FrameLayout>
 
 
@@ -60,28 +62,53 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_margin="1dp"
             android:src="@drawable/rewind_blue_24dp"
             app:backgroundTint="@android:color/white"
-            android:layout_margin="1dp"
             app:fabSize="mini"
             app:rippleColor="#225BC9FA" />
 
-        <TextView
-            android:id="@+id/txt_date_desc"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:ellipsize="marquee"
-            android:fontFamily="@font/architects_daughter"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:singleLine="true"
-            android:text="@{date_desc}"
-            android:textSize="15dp"
-            tools:text="Today in history 'September 9'" />
+            >
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_textbox"
+                android:layout_width="120dp"
+                android:layout_height="19sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+
+                >
+                <TextView
+                    android:id="@+id/txt_date_desc_placeholder"
+                    android:background="@color/shimmer_placeholder"
+                    android:layout_width="120dp"
+                    android:layout_height="19sp"
+                    android:layout_gravity="center"
+                    android:textSize="19sp"
+                    />
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
 
-
+           <TextView
+                android:id="@+id/txt_date_desc"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/architects_daughter"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@{date_desc}"
+               android:visibility="gone"
+                android:textSize="19sp"
+                tools:text="Today in history 'September 9'" />
+        </FrameLayout>
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
