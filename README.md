@@ -5,6 +5,8 @@ This is an android project built with kotlin language. You can see what happend 
 data has got from 'https://byabbe.se/on-this-day/#/default/get__month___day__events_json'
 
 
+https://user-images.githubusercontent.com/34514370/137507986-7c3a20d2-be88-449d-b1b9-0cfcb1e740b9.mp4
+
 
 
 
@@ -17,9 +19,9 @@ This project includes some of the latest features in Android development:
 
 ## Third party libraries
 
--Retrofit 
--com.yuyakaido.android:card-stack-view
--com.facebook.shimmer:shimmer
+- Retrofit 
+- com.yuyakaido.android:card-stack-view
+- com.facebook.shimmer:shimmer
 
 For more details, you can check the source code directly.
 
